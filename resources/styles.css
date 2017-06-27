@@ -1,0 +1,65 @@
+.block {
+	display: inline-block;
+	margin: 0;
+	width: 200px;
+	height: 200px;
+	position: relative;
+}
+
+.block span {
+	position: absolute;
+	font-size: 4em;
+	top: calc(50% - 0.5em);
+	left: calc(50% - 0.5em);
+}
+
+.wrap{
+	width: 805px;
+}
+
+.top-left {
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.top-middle {
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.top-right {
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+.middle-left {
+	border-right: 1px solid black;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.middle {
+	border: 1px solid black;
+}
+
+.middle-right {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+}
+
+.bottom-left {
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.bottom-middle {
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	border-top: 1px solid black;
+}
+
+.bottom-right {
+	border-left: 1px solid black;
+	border-top: 1px solid black;
+}
