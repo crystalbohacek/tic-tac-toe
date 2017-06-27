@@ -6,7 +6,7 @@
 	position: relative;
 }
 
-.block span {
+i {
 	position: absolute;
 	font-size: 4em;
 	top: calc(50% - 0.5em);
