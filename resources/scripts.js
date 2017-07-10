@@ -2,7 +2,6 @@ var gameBoardEl = document.getElementById("gameBoard");
 var availableBlocks = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var playerClass = "xClass";
 var computerClass = "oClass";
-
 var winningLines = 
 [
 	["1", "2", "3"],
@@ -13,7 +12,7 @@ var winningLines =
 	["1", "4", "7"],
 	["1", "4", "7"],
 	["2", "5", "8"],
-	["3", "6", "9"],
+	["3", "6", "9"]
 ]
 
 function hasClass( target, className ) {
@@ -33,6 +32,7 @@ function computerPlay(){
 		document.getElementById(randomField).innerHTML = "<i class='ion-android-radio-button-off'></i>";
 	}, 300);
 	document.getElementById(randomField + "").classList.add(computerClass);
+	checkIfWon(computerClass);
 }
 
 gameBoardEl.onclick = function(ev){
@@ -47,7 +47,8 @@ gameBoardEl.onclick = function(ev){
 
 		ev.target.classList.add(playerClass);
 
-		if (availableBlocks.length){
+
+		if (!checkIfWon(playerClass) && availableBlocks.length){
 			computerPlay();
 		}
 		else{
@@ -55,9 +56,26 @@ gameBoardEl.onclick = function(ev){
 				alert('Game over!');
 			}, 300)
 		}
-	
 	}
 	return false;
 } 
 
 //winner logic
+
+function checkIfWon(classToCheck){
+	for (var i = 0; i < winningLines.length; i++){
+			if (
+				hasClass(document.getElementById(winningLines[i][0]), classToCheck) &&
+				hasClass(document.getElementById(winningLines[i][1]), classToCheck) &&
+				hasClass(document.getElementById(winningLines[i][2]), classToCheck)
+			){
+				setTimeout(function(){
+					alert (classToCheck + " won");
+				}, 10);
+				break;
+				return true;
+			}
+	}
+	return false;
+}
+
